@@ -11,8 +11,9 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
-    "axis": "^1.0.0",
-    "geolib": "^3.2.1",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-awesome-slider": "^4.1.0",
     "react-coverflow": "^0.2.20",
@@ -21,13 +22,11 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.3",
-    "react-slick": "^0.25.2",
-    "react-slidez": "0.0.31",
     "redux": "^4.0.5",
     "video-react": "^0.14.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
