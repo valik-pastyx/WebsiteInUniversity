@@ -1,0 +1,72 @@
+/* FOOTER */
+.footerMainWithoutButton {
+    color: #ffffff;
+    font-size: 19px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding: 70px 0;
+}
+
+.title>span {
+    color: #ffffff;
+}
+
+.social nav {
+    margin-left: 30px;
+}
+
+.subscribe {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+}
+
+.name>input, 
+.name>textarea {
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+    margin-top: 40px;
+    width: 250px;
+    height: 19px;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.subscribe button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 65px;
+}
+
+.reserve {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.reserve h3 {
+    font-weight: normal;
+    margin-left: 15px;
+}
+
+.reserve img {
+    width: 19px;
+}

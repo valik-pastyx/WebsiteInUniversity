@@ -1,0 +1,56 @@
+.good {
+    margin-bottom: 300px;
+    margin-top: 20px;
+    margin-right: 200px;
+}
+
+.banner {
+    position: relative;
+    cursor: pointer;
+}
+
+.banner>img {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+}
+
+.bannerContent {
+    position: relative;
+}
+
+.bannerContent>img {
+    width: 96px;
+    position: absolute;
+    left: 80px;
+    top: -20px;
+    transform: rotate(35deg);
+    transition: all 0.6s ease;
+}
+
+.text {
+    position: absolute;
+    color: #ffffff;
+    z-index: 5;
+    top: 70px;
+    left: 70px;
+    width: 140px;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.7s ease;
+    text-shadow: 1px 1px 10px #ffffff;
+}
+
+.banner:hover .bannerContent>img {
+    transform: rotate(0deg);
+    transform: scale(1.2);
+    z-index: 5;
+}
+
+.banner:hover .text {
+   top: 100px;
+   left: 60px;
+}

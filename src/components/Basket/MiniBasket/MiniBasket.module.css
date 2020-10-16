@@ -1,0 +1,106 @@
+/* BASKET */
+.miniBasket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  position: fixed;
+  right: 0;
+  top: 40px;
+}
+
+.miniBasket > img {
+  width: 32px;
+}
+
+.aroundBasket {
+}
+
+.aroundBasketNon {
+  display: none;
+}
+
+.backBasketThree {
+  position: absolute;
+  top: 60px;
+  right: 7px;
+  background: #ffffff;
+  width: 250px;
+  border: 1px solid #000000;
+  padding: 15px;
+  color: darkred;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.backBasketMore {
+  position: absolute;
+  top: 60px;
+  right: 7px;
+  background: #ffffff;
+  width: 250px;
+  border: 1px solid darkred;
+  padding: 15px;
+  color: darkred;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.contentBasket {
+  height: 87%;
+  overflow: hidden;
+}
+
+.toBasket {
+  width: 100%;
+  height: 13%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: darkred;
+  border: 1px solid darkred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+}
+
+.text {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.good > img {
+  width: 48px;
+  height: 72px;
+  margin-right: 20px;
+}
+
+.good {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.good>img {
+  background-color: darkred;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.otherGood {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+  color: darkred;
+  text-decoration: none;
+}

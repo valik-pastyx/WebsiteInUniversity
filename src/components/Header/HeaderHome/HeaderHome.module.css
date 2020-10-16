@@ -1,0 +1,142 @@
+/* FRAME */
+.headerHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./img/main.png') center center no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.frame {
+    box-sizing: border-box;
+    border: 8px solid #1a4c3e;
+    border-radius: 75px;
+    width: 75%;
+    height: 100%;
+    padding: 35px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin: 33px 0;
+}
+
+/* LOGO AND AUTHORIZATION */
+.logo {
+    display: flex;
+    font-size: 17px;
+    color: #ffffff;
+    justify-content: space-between;
+}
+
+.logoMail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoMail a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 100px;
+}
+
+.authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    margin-right: 100px;
+}
+
+.authorization>div {
+    padding-left: 10px;
+}
+
+.authorization img {
+    width: 20px;
+}
+
+.signIn {
+    display: flex;
+}
+
+.signIn>a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* SIGN_OUT */
+.signOut {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signOut>a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.signOut>button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 0;
+}
+
+
+/* NAVIGATION */
+.navigation {
+    font-size: 25px;
+    width: 120px;
+}
+
+.navigation nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation nav>a {
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* SOCNETWORK */
+.socnetwork {
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+}
+
+.socnetwork>a {
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+
+/* TITLE */
+.title {
+    writing-mode: vertical-lr;
+    font-size: 130px;
+    font-weight: bold;
+    color: rgba(165, 228, 223, 0.4);
+    text-transform: uppercase;
+    position: absolute;
+    right: 10px;
+    bottom: 35px;
+}
+
+.line {
+    content: "";
+    height: 7px;
+    width: 180px;
+    border-radius: 50%;
+    background: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    right: 40%;
+}

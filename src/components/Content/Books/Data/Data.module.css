@@ -1,0 +1,70 @@
+.wiithoutButton {
+    display: flex;
+}
+
+.inputData {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 25%;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.inputData h2 {
+    font-size: 22px;
+}
+
+.flight {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.flight>img {
+    margin-right: 15px;
+}
+
+.flight>div {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.flight>div>span {
+    display: flex;
+}
+
+.foundData {
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.foundData h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.disableBnt {
+    cursor: pointer;
+    float: right;
+    margin: 25px;
+    width: 180px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.unableBtn {
+    cursor: pointer;
+    float: right;
+    margin: 25px;
+    width: 180px;
+    height: 50px;
+    background-color: #ffffff;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}
