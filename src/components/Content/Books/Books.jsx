@@ -1,8 +1,7 @@
 import React from "react";
+import { Button, Col, Container, Form } from "react-bootstrap";
 import css from "./Books.module.css";
 import Data from "./Data/Data";
-import HeaderMainContainer from "../../Header/HeaderMain/HeaderMainContainer";
-import FooterMainContainer from "../../Footer/FooterMain/FooterMainContainer";
 
 const Books = (props) => {
   const from = React.createRef();
@@ -21,24 +20,26 @@ const Books = (props) => {
 
   return (
     <div className={css.books}>
-      <div className={css.header}>
-        <HeaderMainContainer />
-      </div>
-
-      <div className={css.booksContent}>
+      <Container>
         <Data
           findFlight={props.findFlight}
           info={props.info}
           sendInfoToTicket={props.sendInfoToTicket}
           orderRegistration={props.orderRegistration}
+          newFromText={props.newFromText}
+          newToText={props.newToText}
         />
-        <div className={css.searchData}>
-          <form className={css.back}>
-            <div className={css.info}>
-              <select
+        <Form className={css.back}>
+          <Form.Row className="w-100">
+            <Form.Group lg={12} md={12} sm={12} as={Col} controlId="formGridState" className={css.info}>
+              <Form.Label srOnly>From</Form.Label>
+              <Form.Control
+                as="select"
+                defaultValue="Choose..."
                 ref={from}
                 onChange={onTextChange}
                 value={props.newFromText}
+                className={css.selectOwn}
               >
                 <option value="Argentina">Argentina</option>
                 <option value="Aruba">Aruba</option>
@@ -50,10 +51,18 @@ const Books = (props) => {
                 <option value="Spain">Spain</option>
                 <option value="Turkey">Turkey</option>
                 <option value="Ukraine">Ukraine</option>
-              </select>
-            </div>
-            <div className={css.info}>
-              <select ref={to} onChange={onTextChange} value={props.newToText}>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group lg={12} md={12} sm={12}  as={Col} controlId="formGridState" className={css.info}>
+              <Form.Label srOnly>To</Form.Label>
+              <Form.Control
+                as="select"
+                defaultValue="Choose..."
+                ref={to}
+                onChange={onTextChange}
+                value={props.newToText}
+                className={css.selectOwn}
+              >
                 <option value="Argentina">Argentina</option>
                 <option value="Aruba">Aruba</option>
                 <option value="Brazil">Brazil</option>
@@ -64,19 +73,16 @@ const Books = (props) => {
                 <option value="Spain">Spain</option>
                 <option value="Turkey">Turkey</option>
                 <option value="Ukraine">Ukraine</option>
-              </select>
-            </div>
-            <div className={css.btn}>
-              <button type="submit" onClick={addTicket}>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group lg={12} md={12} sm={12} as={Col} className="mb-0">
+              <Button variant="outline-dark" type="submit" className="w-100" onClick={addTicket}>
                 Search
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div className={css.footer}>
-        <FooterMainContainer />
-      </div>
+              </Button>
+            </Form.Group>
+          </Form.Row>
+        </Form>
+      </Container>
     </div>
   );
 };

@@ -1,20 +1,8 @@
 /* FOOTER FULL */
-import linkedin from '../components/Footer/img/linkedin.png';
-import instagram from '../components/Footer/img/instagram.png';
-import twitter from '../components/Footer/img/twitter.png';
-import facebook from '../components/Footer/img/facebook.png';
-
-
 const ADD_NAME = "ADD-NAME";
 const UPDATE_NEW_NAME_TEXT = "UPDATE-NEW-NAME-TEXT";
 
 let initialState = {
-    navigation: [
-        { icon: instagram },
-        { icon: linkedin },
-        { icon: facebook },
-        { icon: twitter },
-    ],
     newName: '',
     newMail: '',
     newMessage: '',

@@ -1,9 +1,16 @@
 import React from "react";
-import { updateNewTextEntr, loginStore } from "../../../../redux/loginReducer";
+import {
+  updateNewTextEntr,
+  loginStore,
+  showLogin,
+} from "../../../../redux/loginReducer";
 import Entry from "./Entry";
 import { connect } from "react-redux";
 
 class SignInAPIComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   storeColector = () => {
     let store = JSON.parse(localStorage.getItem("login"));
     if (store && store.login) {
@@ -26,6 +33,7 @@ class SignInAPIComponent extends React.Component {
     )
       .then((response) => {
         response.json().then((result) => {
+          console.log(result);
           localStorage.setItem(
             "login",
             JSON.stringify({
@@ -39,10 +47,17 @@ class SignInAPIComponent extends React.Component {
       .catch((error) => {
         alert(error);
       });
+    setTimeout(() => window.location.reload(), 2000);
   };
 
   render() {
-    return <Entry {...this.props} addUser={this.addUser} />;
+    return (
+      <Entry
+        {...this.props}
+        addUser={this.addUser}
+        showLogin={this.props.showLogin}
+      />
+    );
   }
 }
 
@@ -51,12 +66,14 @@ let mapStateToProps = (state) => {
     newEmailText: state.login.newEmailText,
     newPasswordText: state.login.newPasswordText,
     login: state.login.login,
+    showL: state.login.showL,
   };
 };
 
 const EntryContainer = connect(mapStateToProps, {
   updateNewTextEntr,
   loginStore,
+  showLogin,
 })(SignInAPIComponent);
 
 export default EntryContainer;

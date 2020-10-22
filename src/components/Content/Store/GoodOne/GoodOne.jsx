@@ -1,9 +1,8 @@
 import React from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import css from "./GoodOne.module.css";
 import arrow from "./img/arrow.png";
-import FooterMainContainer from "../../../Footer/FooterMain/FooterMainContainer";
-import CategoryContainer from "../../../Content/Store/Category/CategoryContainer";
-import MiniBasketContainer from "../../../Basket/MiniBasket/MiniBasketContainer";
+import boot from "./img/boot.jpg";
 
 const GoodOne = (props) => {
   const sendBasket = () => {
@@ -20,8 +19,8 @@ const GoodOne = (props) => {
   const sizeElements = props?.oneGood[3]?.map((s) => {
     return (
       <label>
-        <span>
-          <div className={css.text}>{s}</div>
+        <span className="bg-white">
+          <div className="p-2">{s}</div>
         </span>
       </label>
     );
@@ -29,46 +28,36 @@ const GoodOne = (props) => {
 
   return (
     <div className={css.goodOne}>
-      <div className={css.header}>
-        <CategoryContainer />
-        <div className={css.basket}>
-          <MiniBasketContainer />
-        </div>
-      </div>
-      <div className={css.contentGoodOne}>
-        <div className={css.photo}>
-          <img src={`data:image/png;base64,${props.oneGood[4]}`} />
-        </div>
-        <div className={css.infoGood}>
-          <div className={css.title}>{props.oneGood[0]}</div>
-          <div className={css.price}>{props.oneGood[1]} UAH</div>
-          <div className={css.description}>{props.oneGood[2]}</div>
-          <form className={css.size}>
-            <fieldset>
-              <div
-                className={
-                  props.oneGood[3]?.length === 1
-                    ? css.listSizeZero
-                    : css.listSize
-                }
-              >
-                {sizeElements}
-              </div>
-            </fieldset>
-          </form>
-          <button type="submit" onClick={sendBasket}>
-            ADD
-          </button>
-        </div>
-      </div>
-      <img
-        className={css.arrow}
-        src={arrow}
-        onClick={() => window.history.back()}
-      />
-      <div className={css.footer}>
-        <FooterMainContainer />
-      </div>
+      <Container>
+        <Row>
+          <Col className={css.photo} lg={7} md={7} xs={12} sm={12}>
+            <img src={`data:image/png;base64,${props.oneGood[4]}`} />
+          </Col>
+          <Col className={css.infoGood} lg={5} md={5} xs={12} sm={12}>
+            <h4>{props.oneGood[0]}</h4>
+            <h6>{props.oneGood[1]} UAH</h6>
+            <p>{props.oneGood[2]}</p>
+            <form className={css.size}>
+              <fieldset>
+                <div className={css.listSize}>{sizeElements}</div>
+              </fieldset>
+            </form>
+            <Button
+              variant="outline-warning"
+              type="submit"
+              onClick={sendBasket}
+              className="w-100 font-weight-bold p-2 mt-4"
+            >
+              ADD
+            </Button>
+          </Col>
+        </Row>
+        <img
+          className={css.arrow}
+          src={arrow}
+          onClick={() => window.history.back()}
+        />
+      </Container>
     </div>
   );
 };

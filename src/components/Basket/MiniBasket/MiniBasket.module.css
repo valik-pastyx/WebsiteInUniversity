@@ -1,21 +1,16 @@
 /* BASKET */
 .miniBasket {
+  /* margin-right: 20px; */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
-  position: fixed;
-  right: 0;
-  top: 40px;
 }
 
 .miniBasket > img {
   width: 32px;
-}
-
-.aroundBasket {
 }
 
 .aroundBasketNon {
@@ -24,13 +19,14 @@
 
 .backBasketThree {
   position: absolute;
-  top: 60px;
-  right: 7px;
+  bottom: 80px;
+  right: 0;
+  z-index: 10 !important;
   background: #ffffff;
   width: 250px;
   border: 1px solid #000000;
   padding: 15px;
-  color: darkred;
+  color: #23b5af;
   display: flex;
   flex-direction: column;
   display: flex;
@@ -40,13 +36,14 @@
 
 .backBasketMore {
   position: absolute;
-  top: 60px;
-  right: 7px;
+  bottom: 80px;
+  right: 0;
+  z-index: 10 !important;
   background: #ffffff;
   width: 250px;
-  border: 1px solid darkred;
+  border: 1px solid #000000;
   padding: 15px;
-  color: darkred;
+  color: #23b5af;
   display: flex;
   flex-direction: column;
   display: flex;
@@ -64,8 +61,8 @@
   height: 13%;
   text-decoration: none;
   text-transform: uppercase;
-  color: darkred;
-  border: 1px solid darkred;
+  color: #23b5af;
+  border: 1px solid #23b5af;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +87,7 @@
 }
 
 .good>img {
-  background-color: darkred;
+  background-color: #23b5af;
 }
 
 .name {
@@ -101,6 +98,17 @@
   display: flex;
   justify-content: center;
   margin: 25px;
-  color: darkred;
+  color: #23b5af;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 576px) {
+  .miniBasket {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .miniBasket > img {
+    width: 25px;
+  }
 }

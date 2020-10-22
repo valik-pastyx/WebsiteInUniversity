@@ -1,70 +1,72 @@
-.wiithoutButton {
-    display: flex;
-}
-
 .inputData {
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 25%;
-    padding: 20px;
-    margin-right: 20px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
 }
 
 .inputData h2 {
-    font-size: 22px;
+  font-size: 22px;
+  margin: 0;
 }
 
-.flight {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.flight>img {
-    margin-right: 15px;
-}
-
-.flight>div {
-    text-transform: capitalize;
-    font-size: 18px;
-}
-
-.flight>div>span {
-    display: flex;
+.info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center !important;
+  text-align: center;
 }
 
 .foundData {
-    width: 75%;
-    background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 !important;
+  padding-bottom: 5px !important;
 }
 
 .foundData h1 {
-    text-align: center;
-    text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
 }
 
-.disableBnt {
-    cursor: pointer;
-    float: right;
-    margin: 25px;
-    width: 180px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffffff;
+@media only screen and (max-width: 990px) {
+  .inputData h2 {
+    font-size: 18px;
+  }
+  .info {
+    font-size: 14px;
+  }
+  .info img {
+    width: 25px;
+  }
+  .foundData h1 {
+    font-size: 25px;
+  }
 }
 
-.unableBtn {
-    cursor: pointer;
-    float: right;
-    margin: 25px;
-    width: 180px;
-    height: 50px;
-    background-color: #ffffff;
-    border: none;
+@media only screen and (max-width: 768px) {
+  .inputData {
+    padding: 5px;
+  }
+  .inputData h2 {
     font-size: 15px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.8);
+  }
+  .info {
+    font-size: 12px;
+  }
+  .foundData h1 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .inputData h2 {
+    font-size: 11px;
+  }
+  .info {
+    font-size: 10px;
+  }
+  .foundData h1 {
+    font-size: 18px;
+  }
 }

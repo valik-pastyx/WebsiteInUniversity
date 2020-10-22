@@ -1,53 +1,37 @@
 .goodOne {
   background: linear-gradient(90deg, #000000, darkred 50%, #000000);
   color: #ffffff;
-  padding-top: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  /* position: fixed; */
-  z-index: 11;
-}
-
-.contentGoodOne {
-  display: flex;
-  margin-bottom: 50px;
+  padding: 100px 0;
 }
 
 .photo {
-  width: 60%;
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  align-items: center;
 }
 
 .photo > img {
-  width: 50%;
   box-shadow: 50px 50px 20px #ffffff;
-  height: 500px;
+  height: 450px;
+  width: 50%;
 }
 
 .infoGood {
-  width: 40%;
   padding: 100px;
 }
 
-.title {
+.infoGood h4 {
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.price {
+.infoGood h6 {
   font-size: 25px;
   padding-bottom: 20px;
 }
 
-.description {
+.infoGood p {
   font-size: 17px;
 }
 
@@ -60,34 +44,32 @@
   border-bottom: 1px solid #ffffff;
 }
 
-.listSizeZero {
-  border: none;
-}
-
 .listSize > label > span {
   background-color: #ffffff;
 }
 
-.text {
-  padding: 5px;
-}
-
-.infoGood > button {
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  margin-top: 20px;
-}
-
 .arrow {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    bottom: 100px;
+    left: 20px;
+    z-index: 2;
     cursor: pointer;
 }
 
-.footer {
-  background-color: rgba(255, 253, 253, 0.3);
+@media only screen and (max-width: 990px) {
+  .photo > img {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .photo > img {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .photo > img {
+    width: 80%;
+  }
 }

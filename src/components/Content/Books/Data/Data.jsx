@@ -5,6 +5,7 @@ import flight from "./img/flight.png";
 import money from "./img/money.png";
 import FindFlight from "../FindFlight/FindFlight";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const Data = (props) => {
   const order = () => {
@@ -29,46 +30,83 @@ const Data = (props) => {
   ));
   return (
     <div className={css.data}>
-      <div className={css.wiithoutButton}>
-        <div className={css.inputData}>
-          <h2>Mine ticket</h2>
-          <div className={css.flight}>
-            <img src={flight} />
-            <div>
-              {props.info[0]} {props.info.length === 0 ? "" : "-"}{" "}
-              {props.info[1]}
-            </div>
-          </div>
-          <div className={css.flight}>
-            <img src={date} />
-            <div>
-              <span>{props.info[3]}</span> {props.info[2]}
-            </div>
-          </div>
-          <div className={css.flight}>
-            <img src={money} />
-            <div>
-              {props.info.length === 0 ? "" : "₴"}
-              {props.info[4]}
-            </div>
-          </div>
-        </div>
-        <div className={css.foundData}>
-          <h1>
-            {props.info[0]} {props.info.length === 0 ? "" : "-"} {props.info[1]}
-          </h1>
+      <Row>
+        <Col
+          lg={{ offset: 0, span: 3 }}
+          md={{ offset: 0, span: 4 }}
+          sm={{ span: 12 }}
+          xs={{ span: 12 }}
+          className={css.inputData}
+        >
+          <Row className="align-items-center">
+            <Col lg={12} md={12} sm={3} xs={3}>
+              <h2>Mine ticket</h2>
+            </Col>
+            <Col lg={12} md={12} sm={3} xs={3}>
+              <Row className={css.info}>
+                <Col lg={2} md={2} sm={12} xs={12}>
+                  <img src={flight} />
+                </Col>
+                <Col lg={8} md={8} sm={12} xs={12} className="text-capitalize">
+                  {props.info[0]} {props.info.length === 0 ? "" : "-"}{" "}
+                  {props.info[1]}
+                </Col>
+              </Row>
+            </Col>
+            <Col lg={12} md={12} sm={3} xs={3}>
+              <Row className={css.info}>
+                <Col lg={2} md={2} sm={12} xs={12}>
+                  <img src={date} />
+                </Col>
+                <Col lg={8} md={8} sm={12} xs={12}>
+                  <span>{props.info[3]}</span>
+                  <span>{props.info[2]}</span>
+                </Col>
+              </Row>
+            </Col>
+            <Col lg={12} md={12} sm={3} xs={3}>
+              <Row className={css.info}>
+                <Col lg={2} md={2} sm={12} xs={12}>
+                  <img src={money} />
+                </Col>
+                <Col lg={8} md={8} sm={12} xs={12}>
+                  {props.info.length === 0 ? "" : "₴"}
+                  {props.info[4]}
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          lg={{ offset: 1, span: 8 }}
+          md={{ offset: 1, span: 7 }}
+          sm={{ span: 12 }}
+          xs={{ span: 12 }}
+          className={css.foundData}
+        >
+          <h1>{props.newFromText} - {props.newToText}</h1>
           {findElements}
-        </div>
-      </div>
-      <NavLink to={props.info.length === 0 ? "/books" : "/ticket_registration"}>
-        <button
-          className={props.info.length === 0 ? css.disableBnt : css.unableBtn}
+        </Col>
+      </Row>
+      {props.info.length ? (
+        <NavLink
+          to="/ticket_registration"
+          className="float-right clearfix mt-2"
+        >
+          <Button type="submit" variant="light">
+            Continue
+          </Button>
+        </NavLink>
+      ) : (
+        <Button
           type="submit"
-          onClick={props.info.length === 0 ? orderNon : ""}
+          variant="dark"
+          disabled
+          className="float-right clearfix mt-2"
         >
           Continue
-        </button>
-      </NavLink>
+        </Button>
+      )}
     </div>
   );
 };

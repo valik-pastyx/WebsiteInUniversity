@@ -1,19 +1,27 @@
 import React from "react";
 import css from "./App.module.css";
 import HomePage from "./pages/HomePage";
-import GalleryPage from "./pages/GalleryPage";
 import BooksPage from "./pages/BooksPage";
-import StorePage from './pages/StorePage';
-import AccountPage from "./pages/AccountPage";
+import StorePage from "./pages/StorePage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Route } from "react-router-dom";
+import FooterContainer from "./components/Footer/FooterContainer";
+import Gallery from "./components/Content/Gallery/Gallery";
+import NavibarContainer from "./components/Header/Navibar/NavibarContainer";
+import StoreHeader from "./components/Header/StoreHeader/StoreHeader";
+import AccountContainer from "./components/Account/AccountContainer";
 
 const App = () => {
   return (
     <div className={css.app}>
-      <HomePage />
-      <GalleryPage />
+      <NavibarContainer />
+      <StoreHeader />
+      <Route exact path="/" render={() => <HomePage />} />
+      <Route path="/gallery" render={() => <Gallery />} />
       <BooksPage />
       <StorePage />
-      <AccountPage />
+      <Route path="/account" render={() => <AccountContainer />} />
+      <FooterContainer />
     </div>
   );
 };

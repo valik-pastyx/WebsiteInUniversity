@@ -1,38 +1,43 @@
 import React from "react";
 import css from "./GoodMain.module.css";
-import HeaderMainContainer from "../../../Header/HeaderMain/HeaderMainContainer";
-import FooterMainContainer from "../../../Footer/FooterMain/FooterMainContainer";
-import Good from "./Good/Good";
-import MiniBasketContainer from "../../../Basket/MiniBasket/MiniBasketContainer";
-import CategoryContainer from "../../../Content/Store/Category/CategoryContainer";
+import { Link } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
 
 const GoodMain = (props) => {
-  const goodsElements = props.goods.map((g) => (
-    <Good
-      key={g._id}
-      id={g._id}
-      price={g.price}
-      title={g.title}
-      image={g.image}
-      description={g.description}
-      size={g.size}
-      setOneGood={props.setOneGood}
-    />
-  ));
-
   return (
     <div className={css.goodMain}>
-      <div className={css.header}>
-        <CategoryContainer />
-        <HeaderMainContainer />
-        <div className={css.basket}>
-          <MiniBasketContainer />
-        </div>
-      </div>
-      <div className={css.contentGood}>{goodsElements}</div>
-      <div className={css.footer}>
-        <FooterMainContainer />
-      </div>
+      <Container>
+        <Row className="justify-content-center">
+          {props.goods.map((g) => {
+            const getID = () => {
+              if (g._id) {
+                return props.setOneGood(
+                  g.title,
+                  g.price,
+                  g.description,
+                  g.size,
+                  g.image,
+                  g._id
+                );
+              }
+            };
+            return (
+              <Col lg={3} md={3} xs={3} sm={3} className={css.good}>
+                <Link to="/good_one">
+                  <img
+                    src={`data:image/png;base64,${g.image}`}
+                    onClick={getID}
+                  />
+                </Link>
+                <div className={css.name} onClick={getID}>
+                  {g.title}
+                </div>
+                <div className={css.price}>{g.price} UAH</div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

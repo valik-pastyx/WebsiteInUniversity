@@ -1,0 +1,34 @@
+/* BACKGROUND */
+.back {
+  background-color: #002724;
+  color: #e3493b;
+  text-align: center;
+  padding: 50px 0 60px;
+}
+/* TEXT */
+.video > span {
+  color: #eeba4c;
+}
+
+.video p {
+  color: #ffffff;
+}
+/* PLAYER */
+.playerWrapper {
+  width: 50% !important;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.player {
+  width: auto !important;
+  height: 250px !important;
+}
+
+/* ADAPTATION */
+@media only screen and (max-width:  550px) {
+    .player {
+        height: 150px !important;
+    }
+}

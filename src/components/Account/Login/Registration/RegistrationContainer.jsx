@@ -1,5 +1,5 @@
 import React from "react";
-import { updateNewTextReg, loginStore } from "../../../../redux/loginReducer";
+import { updateNewTextReg, loginStore, showRegistration } from "../../../../redux/loginReducer";
 import Registration from "./Registration";
 import { connect } from "react-redux";
 
@@ -36,15 +36,14 @@ class SignUpAPIComponent extends React.Component {
         );
         this.storeColector();
       });
+    })
+    .catch((error) => {
+      alert(error);
     });
   };
 
   render() {
-    return !this.props.login ? (
-      <Registration {...this.props} addUser={this.addUser} />
-    ) : (
-      window.location.replace("http://localhost:3000/books")
-    );
+    return <Registration {...this.props} addUser={this.addUser} showRegistration={this.props.showRegistration} />
   }
 }
 
@@ -54,12 +53,14 @@ let mapStateToProps = (state) => {
     newEmailText: state.login.newEmailText,
     newPasswordText: state.login.newPasswordText,
     login: state.login.login,
+    showR: state.login.showR
   };
 };
 
 const RegistrationContainer = connect(mapStateToProps, {
   updateNewTextReg,
   loginStore,
+  showRegistration
 })(SignUpAPIComponent);
 
 export default RegistrationContainer;

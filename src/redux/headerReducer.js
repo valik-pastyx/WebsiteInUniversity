@@ -1,8 +1,4 @@
 /* HEADER FULL */
-import instagram from "../components/Footer/img/instagram.png";
-import twitter from "../components/Footer/img/twitter.png";
-import facebook from "../components/Footer/img/facebook.png";
-
 const CHANGE_HOVER = "CHANGE-HOVER";
 const UPDATE_NEW_SUB_TEXT = "UPDATE-NEW-SUB-TEXT";
 const SET_GOODS = "SET-GOODS";
@@ -13,9 +9,6 @@ const SET_GOOD_TO_BASKET = "SET-GOOD-TO-BASKET";
 const SET_PRICE = "SET-PRICE";
 
 let initialState = {
-  homePageHeader: {
-    socnetwork: [{ icon: instagram }, { icon: twitter }, { icon: facebook }],
-  },
   hover: false,
   hoverBasket: false,
   newEquipText: "",

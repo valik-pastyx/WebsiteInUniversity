@@ -1,11 +1,14 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import Home from '../components/Content/Home/Home';
+import About from "../components/Content/Home/About";
+import Blog from "../components/Content/Home/Blog";
+import MainHome from "../components/Content/Home/MainHome";
 
 const HomePage = () => {
   return (
     <div>
-     <Route exact path="/" render={() => <Home />} />
+     <MainHome />
+     <About />
+     <Blog />
     </div>
   );
 };

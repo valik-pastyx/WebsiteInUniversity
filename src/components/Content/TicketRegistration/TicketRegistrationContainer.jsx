@@ -19,6 +19,7 @@ class SendTicket extends React.Component {
         },
       }
     );
+    alert("Your ticket flew, catch))")
   };
 
   render() {

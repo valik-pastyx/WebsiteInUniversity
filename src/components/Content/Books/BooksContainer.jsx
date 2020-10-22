@@ -36,6 +36,8 @@ class BooksAPIComponent extends React.Component {
         addTicket={this.addTicket}
         sendInfoToTicket={this.props.sendInfoToTicket}
         orderRegistration={this.orderRegistration}
+        newFromText={this.props.newFromText}
+        newToText={this.props.newToText}
       />
     );
   }

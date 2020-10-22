@@ -1,0 +1,65 @@
+/* BACKGROUND */
+.jumbo {
+  background: url('./img/main.png') no-repeat fixed bottom;
+  background-size: cover;
+  color: #efefef;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: -2;
+  margin: 0 !important;
+}
+.overlay {
+  background-color: #000;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.container {
+  margin-top: 150px;
+}
+/* SOCNETWORK */
+.socnetwork {
+  display: flex;
+  justify-content: center;
+}
+
+.socnetwork i {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+/* TITLE */
+.title {
+  font-size: 130px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 200px;
+}
+
+/* ADAPTATION */
+@media only screen and (max-width: 990px) {
+    .title {
+      transform: translateY(120px);
+    }
+  }
+  
+@media only screen and (max-width: 650px) {
+    .title {
+      font-size: 100px !important;
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
+    .title {
+      font-size: 70px !important;
+    }
+  }
+  

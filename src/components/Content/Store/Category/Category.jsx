@@ -32,7 +32,7 @@ const Category = (props) => {
         >
           <div className={css.equipment}>
             <h3 onClick={ () => props.subMenu(!props.equipState, false, false, false)} >Equipment</h3>
-            <NavLink to="/good_main" className={props.equipState === true ? css.subcategories : css.subcategoriesNon}> 
+            <NavLink to="/good_main" className={props.equipState ? css.subcategories : css.subcategoriesNon}> 
               <select
                 multiple
                 size="4"

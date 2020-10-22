@@ -4,10 +4,11 @@ import title from "./img/title.png";
 import altName from "./img/altName.png";
 import handStart from "./img/handStart.png";
 import handEnd from "./img/handEnd.png";
+import { Col, Row } from "react-bootstrap";
 
 const Ticket = (props) => {
   return (
-    <div className={css.ticket}>
+    <>
       <div className={css.banner}
       onMouseEnter={() => props.changeIcon(!props.hoverOnTicket)}
       onMouseLeave={() => props.changeIcon(!props.hoverOnTicket)}
@@ -26,24 +27,24 @@ const Ticket = (props) => {
             <img src={altName} />
             <span className={css.to}>{props.to}</span>
           </div>
-          <div className={css.infoFlight}>
-            <div className={css.passenger}>
+          <Row className={css.infoFlight}>
+            <Col>
               <h3>Passenger</h3>
               <span>{props.dataUser.user.name}</span>
-            </div>
-            <div className={css.gate}>
+            </Col>
+            <Col>
               <h3>Gate</h3>
               <span>23A</span>
-            </div>
-            <div className={css.departure}>
+            </Col>
+            <Col className="mr-2">
               <h3>Departure</h3>
               <span>{props.time}</span>
               <span>{props.date}</span>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,54 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 40px !important;
+  color: #ffffff !important;
+}
+
+.naviagtion {
+  margin: 0 auto;
+  border: 4px solid #ffffff;
+  border-radius: 25% 25% 25% 25%;
+}
+
+.naviagtion a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.auth button {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.name a{
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff !important;
+  margin-right: 5px;
+}
+
+/* ADAPTATION */
+
+@media only screen and (max-width: 990px) {
+  .naviagtion {
+    border: none !important;
+    border-radius: 0 !important;
+    margin-bottom: 5px !important;
+  }
+  .naviagtion a {
+    text-align: center;
+  }
+  .naviagtion a a {
+    padding: 0 50px;
+    border-bottom: 3px solid #ffffff;
+  }
+}

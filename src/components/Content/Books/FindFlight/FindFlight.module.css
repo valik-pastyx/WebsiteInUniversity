@@ -1,85 +1,66 @@
-.find {
-    display: flex;
-}
-
-.flightData {
-    width: 30%;
-    padding: 20px;
-    /* text-align: center; */
-}
-
-.cities {
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-}
-
-
-.flightInfo {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.flightInfo>div>label {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.departure>div>span {
-    margin-left: 15px;
-
-}
-
-.price {
-    width: 70%;
-    display: flex;
-    padding: 20px;
-}
-
-.price>div {
+.ticket {
+    border: 2px solid #000;
+    margin: 10px !important;
+    border-radius: 25px;
+  }
+  
+  .price {
+    padding: 5px 40px !important;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px 0 0 20px;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    font-size: 25px;
-    color: royalblue;
-    margin-right: 20px;
-}
-
-.price>div>div {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    border: 1px solid #000000;
-    height: 85%;
-    cursor: pointer;
-}
-
-.econom>div:active {
-    color: #000000;
-
-}
-
-.price>div>span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 20px;
-    font-size: 16px;
-    height: 15%;
+  }
+  
+  .price > div {
     margin-bottom: 10px;
-}
-
-.econom>span {
-    background-color: royalblue;
-}
-
-.business>span {
-    background-color: orange;
-}
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+  }
+  
+  .price button {
+      width: 100%;
+  }
+  
+  
+  @media only screen and (max-width: 990px) {
+      .price {
+          font-size: 12px;
+      }
+      .price  button {
+          font-size: 10px;
+      }
+      .flightData {
+          font-size: 12px;
+      }
+      .flightData h5 {
+          font-size: 14px;
+      }
+  }
+  
+  @media only screen and (max-width: 768px) { 
+      .price {
+          border-radius: 20px 20px 0 0;
+      }
+  }
+  
+  @media only screen and (max-width: 576px) { 
+      .price {
+          font-size: 10px;
+      }
+      .price  button {
+          font-size: 10px;
+      }
+      .flightData {
+          font-size: 10px;
+      }
+      .flightData h5 {
+          font-size: 12px;
+      }
+  }

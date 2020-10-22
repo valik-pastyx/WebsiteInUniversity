@@ -1,47 +1,67 @@
 import React from "react";
 import css from "./Checkout.module.css";
-import HeaderMainContainer from "../../Header/HeaderMain/HeaderMainContainer";
-import FooterMainContainer from "../../Footer/FooterMain/FooterMainContainer";
 import { NavLink } from "react-router-dom";
+import { Button, Col, Container, Form } from "react-bootstrap";
 
 const Checkout = (props) => {
   const buy = (event) => {
     event.preventDefault();
     props.buyByID();
+    alert("Your's product successful purchased, nice to meet you))");
   };
   return (
     <div className={css.checkout}>
-      <div className={css.header}>
-        <HeaderMainContainer />
-      </div>
-      <div className={css.basketContent}>
+      <Container>
         <h2>Specify Data</h2>
-        <div className={css.goodContent}>
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="text" placeholder="Adress" />
-          <input type="number" placeholder="Postcode" />
-          <input type="text" placeholder="Region" />
-          <input type="text" placeholder="District" />
-          <input type="text" placeholder="City" />
-          <input type="email" placeholder="Email" />
-          <input type="number" placeholder="Phone number" />
-          <input type="text" placeholder="Delivery method" />
-          <input type="text" placeholder="Payment method" />
+        <Form>
+          <Form.Row className={css.forma}>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Name</Form.Label>
+              <Form.Control type="text" placeholder="Name" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Adress</Form.Label>
+              <Form.Control type="text" placeholder="Adress" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Postcode</Form.Label>
+              <Form.Control type="number" placeholder="Postcode" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>City</Form.Label>
+              <Form.Control type="number" placeholder="City" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Email</Form.Label>
+              <Form.Control type="email" placeholder="Email" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Phone number</Form.Label>
+              <Form.Control type="number" placeholder="Phone number" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Delivery method</Form.Label>
+              <Form.Control type="text" placeholder="Delivery method" />
+            </Col>
+            <Col sm={3} className="m-4">
+              <Form.Label srOnly>Payment method</Form.Label>
+              <Form.Control type="text" placeholder="Payment method" />
+            </Col>
+          </Form.Row>
+        </Form>
+        <div className={css.continue}>
+          <Button
+            variant="outline-danger"
+            onClick={() => window.history.back()}
+          >
+            go back
+          </Button>
+          <span>{`total ${props.totalPrice},00 UAH`}</span>
+          <Button variant="outline-primary" onClick={buy}>
+            checkout
+          </Button>
         </div>
-      </div>
-      <div className={css.continue}>
-        <button className={css.toBack} onClick={() => window.history.back()}>
-          go back
-        </button>
-        <span>{`total ${props.totalPrice},00 UAH`}</span>
-        <NavLink to="/checkout" className={css.toForward} onClick={buy}>
-          Checkout
-        </NavLink>
-      </div>
-      <div className={css.footer}>
-        <FooterMainContainer />
-      </div>
+      </Container>
     </div>
   );
 };

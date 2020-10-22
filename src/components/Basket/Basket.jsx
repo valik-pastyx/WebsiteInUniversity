@@ -1,8 +1,7 @@
 import React from "react";
 import css from "./Basket.module.css";
-import HeaderMainContainer from "../Header/HeaderMain/HeaderMainContainer";
-import FooterMainContainer from "../Footer/FooterMain/FooterMainContainer";
 import { NavLink } from "react-router-dom";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const Basket = (props) => {
   const goodElements = props.basket.map((b) => {
@@ -12,41 +11,39 @@ const Basket = (props) => {
       }
     };
     return (
-      <div className={css.good}>
+      <Col lg={3} md={3} sm={3} xs={3} className={css.good}>
         <img src={`data:image/png;base64,${b.image}`} />
-        <div className={css.text}>
-          <div className={css.name}>{b.title}</div>
-          <div className={css.price}>{b.price} UAH</div>
-        </div>
-        <button className={css.delete} onClick={IDToDelete}>
-          delete
-        </button>
-      </div>
+        <Row>
+          <Col lg={6} md={6} sm={12} xs={12} >
+            <h6 className="font-weight-bold">{b.title}</h6>
+            <p>{b.price} UAH</p>
+          </Col>
+          <Col lg={6} md={6} sm={12} xs={12} >
+            <Button variant="outline-warning" onClick={IDToDelete}>
+              delete
+            </Button>
+          </Col>
+        </Row>
+      </Col>
     );
   });
 
   return (
     <div className={css.basket}>
-      <div className={css.header}>
-        <HeaderMainContainer />
-      </div>
-      <div className={css.basketContent}>
+      <Container>
         <h2>Basket</h2>
         <div className={css.count}>{`${props.basket.length} goods`}</div>
-        <div className={css.goodContent}>{goodElements}</div>
-      </div>
-      <div className={css.continue}>
-        <button className={css.toBack} onClick={() => window.history.back()}>
-          go back
-        </button>
-        <span>{`total ${props.totalPrice},00 UAH`}</span>
-        <NavLink to="/checkout" className={css.toForward}>
-          Continue
-        </NavLink>
-      </div>
-      <div className={css.footer}>
-        <FooterMainContainer />
-      </div>
+        <Row className={css.goodContent}>{goodElements}</Row>
+        <div className={css.continue}>
+          <Button variant="outline-danger" onClick={() => window.history.back()}>
+            go back
+          </Button>
+          <span>{`total ${props.totalPrice},00 UAH`}</span>
+          <NavLink to="/checkout">
+            <Button variant="outline-primary">continue</Button>
+          </NavLink>
+        </div>
+      </Container>
     </div>
   );
 };

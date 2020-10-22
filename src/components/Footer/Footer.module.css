@@ -1,0 +1,26 @@
+/* FOOTER */
+.footer {
+    padding: 50px 0 10px;
+}
+
+.title {
+    color: #eeba4c;
+}
+
+.socnetwork i {
+    color: #eeba4c !important;
+}
+
+.inputs {
+    padding: 50px 0;
+}
+
+.inputs label{
+    color: #e3493b;
+    font-size: 14px;
+}
+
+.inputs input,textarea {
+    font-size: 12px;
+    color: #3a3a3c !important;
+}

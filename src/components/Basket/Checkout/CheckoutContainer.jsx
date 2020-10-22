@@ -8,7 +8,6 @@ class BuyProduct extends React.Component {
     this.store = JSON.parse(localStorage.getItem("login"));
   }
   buyByID = () => {
-    debugger;
     this.props.basket.map((b) => {
       this.token = `Bearer ${this.store.token}`;
       return fetch(

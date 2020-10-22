@@ -21,7 +21,6 @@ class GoodInBasket extends React.Component {
       }).then((response) => {
         response.json().then((result) => {
           this.props.setGoodToBasket(result);
-          console.log(result);
         });
       });
     }

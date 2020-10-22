@@ -1,5 +1,23 @@
-.app {
+/* .app {
     background: url('./components/Content/Books/img/books1.jpg') center center no-repeat fixed;
     background-size: cover;
 }
+ */
 
+ /* COLORS MAIN 
+ yellow - #eeba4c
+ red - #e3493b
+ aqua - #23b5af
+ light - #a9ddd9
+ dark - #3a3a3c
+ light - #ffffff
+ dark-green - #002724
+ */
+
+body, * {
+    font-family: 'Work Sans', sans-serif;
+}
+
+* i {
+    margin: 0 10px;
+}
