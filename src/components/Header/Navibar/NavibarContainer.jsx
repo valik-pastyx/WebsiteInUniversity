@@ -43,6 +43,9 @@ class Token extends React.Component {
     })
       .then(() => localStorage.removeItem("login"))
       .then(() => this.props.loginStore(false));
+    setTimeout(() => {
+      window.location.reload();
+    },2000);
   };
 
   render() {

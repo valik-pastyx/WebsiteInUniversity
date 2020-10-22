@@ -11,18 +11,27 @@ class GoodInBasket extends React.Component {
     if (this.store && this.store.login) {
       this.props.loginStore(this.store.login);
     }
-    if (this.props.login) {
-      this.token = `Bearer ${this.store.token}`;
-      fetch(`https://valentine-online-shop-api.herokuapp.com/shop/cart`, {
-        method: "GET",
-        headers: {
-          Authorization: this.token,
-        },
-      }).then((response) => {
-        response.json().then((result) => {
-          this.props.setGoodToBasket(result);
-        });
-      });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.basket === prevProps.basket) {
+      if (this.props.login) {
+        this.token = `Bearer ${this.store.token}`;
+        fetch(`https://valentine-online-shop-api.herokuapp.com/shop/cart`, {
+          method: "GET",
+          headers: {
+            Authorization: this.token,
+          },
+        })
+          .then((response) => {
+            response.json().then((result) => {
+              this.props.setGoodToBasket(result);
+            });
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      }
     }
   }
 

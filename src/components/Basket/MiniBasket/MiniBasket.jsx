@@ -4,7 +4,7 @@ import basket from "./img/backpack.png";
 import { NavLink } from "react-router-dom";
 
 const MiniBasket = (props) => {
-  const goodElements = props.basket.map((b) => {
+  const goodElements = props.basket?.map((b) => {
     return (
       <div className={css.good}>
         <img src={`data:image/png;base64,${b.image}`} />

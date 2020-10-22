@@ -7,23 +7,24 @@ class GoodInBasket extends React.Component {
   constructor(props) {
     super(props);
     this.store = JSON.parse(localStorage.getItem("login"));
-
-    this.reload = () => {
-      this.token = `Bearer ${this.store.token}`;
-      fetch(`https://valentine-online-shop-api.herokuapp.com/shop/cart`, {
-        method: "GET",
-        headers: {
-          Authorization: this.token,
-        },
-      }).then((response) => {
-        response.json().then((result) => {
-          this.props.setGoodToBasket(result);
-          console.log(result);
-          this.showTotal();
+    if (this.props.login) {
+      this.reload = () => {
+        this.token = `Bearer ${this.store.token}`;
+        fetch(`https://valentine-online-shop-api.herokuapp.com/shop/cart`, {
+          method: "GET",
+          headers: {
+            Authorization: this.token,
+          },
+        }).then((response) => {
+          response.json().then((result) => {
+            this.props.setGoodToBasket(result);
+            console.log(result);
+            this.showTotal();
+          });
         });
-      });
-    };
-    this.reload();
+      };
+      this.reload();
+    }
   }
 
   deleteGood = (id) => {
@@ -59,6 +60,7 @@ class GoodInBasket extends React.Component {
         basket={this.props.basket}
         totalPrice={this.props.totalPrice}
         deleteGood={this.deleteGood}
+        login={this.props.login}
       />
     );
   }
@@ -69,6 +71,7 @@ let mapStateToProps = (state) => {
     basket: state.header.basket,
     IDGood: state.header.IDGood,
     totalPrice: state.header.totalPrice,
+    login: state.login.login,
   };
 };
 

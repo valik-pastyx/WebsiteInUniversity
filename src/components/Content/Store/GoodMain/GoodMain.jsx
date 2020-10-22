@@ -6,7 +6,8 @@ import { Col, Container, Row } from "react-bootstrap";
 const GoodMain = (props) => {
   return (
     <div className={css.goodMain}>
-      <Container>
+      {props.goods.length ?
+        <Container>
         <Row className="justify-content-center">
           {props.goods.map((g) => {
             const getID = () => {
@@ -37,7 +38,9 @@ const GoodMain = (props) => {
             );
           })}
         </Row>
-      </Container>
+      </Container> :
+      <div className={css.empty}><h1>Take some product</h1></div>
+    }
     </div>
   );
 };
